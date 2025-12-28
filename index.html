@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hillsviewguesthouse</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+  <nav id="navbar">
+    <h1>Hills View Guest house </h1>
+
+    <!-- Hamburger -->
+    <div id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <!-- Dynamic links container -->
+    <div id="nav-links">
+      <!-- Links will be injected via JS -->
+    </div>
+  </nav>
+</header>
+
+
+<!-- HERO -->
+<div class="hero-slider">
+  <div class="slides">
+    <div class="slide active" style="background-image: url('images/room1.jpg')"></div>
+    <div class="slide" style="background-image: url('images/room2.jpg')"></div>
+    <div class="slide" style="background-image: url('images/room7.jpg')"></div>
+    <div class="slide" style="background-image: url('images/room6.jpg')"></div>
+    <div class="slide" style="background-image: url('images/billard.jpg')"></div>
+    <div class="slide" style="background-image: url('images/upperview.jpg')"></div>
+        <div class="slide" style="background-image: url('images/screen.jpg')"></div>
+ </div>
+
+  <div class="overlay">
+    <h2>Great Food • Cold Beers • Comfortable Rooms .Fun Games</h2>
+    <p>Your perfect place to relax and enjoy</p><br>
+    <a href="menu.html" class="btn whatsapp-btn">Order on WhatsApp</a>
+</div>
+  <!-- Optional navigation arrows -->
+  <div class="slider-nav">
+    <span class="prev">&#10094;</span>
+    <span class="next">&#10095;</span>
+  </div>
+</div>
+
+<!-- Features Section -->
+<div class="features">
+  <h3 style="text-align: center; ">why choosing us?!</h3>
+  
+  <div class="feature-grid">
+    <div class="feature-card">
+      <img src="images/room1.jpg" alt="Rooms"><br><br>
+<p> <a href="contact.html" class="btn">Book now</a></p><br><br>
+      <h3>Comfortable Rooms</h3>
+      <p>Clean, cozy, and affordable lodging for your stay.</p>
+      <a href="index.html">READMORE>></a>
+    </div>
+    <div class="feature-card">
+      <img src="images/billard.jpg" alt="Billard">
+      <h3>Billard & Games</h3>
+      <p>Fun games while enjoying drinks with friends.</p>
+       <a href="index.html">READMORE>></a>
+    </div>
+    <div class="feature-card">
+      <img src="images/screen.jpg" alt="Live Soccer">
+      <h3>Live Soccer Matches</h3>
+      <p>Watch live matches on big screens while you eat & drink.</p>
+       <a href="index.html">READMORE>></a>
+    </div>
+    <div class="feature-card">
+      <img src="images/upperview.jpg" alt="Upper Floor Lounge">
+      <h3>Upper Floor Lounge</h3>
+      <p>Enjoy drinks and meals with a stunning nature view.</p>
+       <a href="index.html">READMORE>></a>
+    </div>
+    <div class="feature-card">
+      <img src="images/food1.jpg" alt="food1">
+      <h3>well prepared food</h3>
+      <p>Enjoy good meals prepared with hygien by our top ranked chefs in Rwanda.</p>
+       <a href="index.html">READMORE>></a>
+    </div>
+     <div class="feature-card">
+      <img src="images/beer1.jpg" alt="beer1">
+      <h3>cold drinks</h3>
+      <p> enjoy drinks of your choice with friends at an affordable price.</p>
+       <a href="index.html">READMORE>></a>
+    </div>
+  </div>
+</div>
+
+<!-- Gallery Section -->
+<div class="section gallery">
+  <h2>Gallery</h2>  <a href="menu.html" class="btn">View full Menu</a><br><br>
+  <div class="gallery-grid">
+    <img src="images/room1.jpg" alt="">
+    <img src="images/room2.jpg" alt="">
+    <img src="images/room6.jpg" alt="">
+    <img src="images/billard.jpg" alt="">
+    <img src="images/upperview.jpg" alt="">
+    <img src="images/food1.jpg" alt="">
+    <img src="images/food2.jpg" alt="">
+    <img src="images/beer1.jpg" alt="">
+  </div>
+</div>
+
+<!-- Floating WhatsApp Contact -->
+<a href="https://wa.me/250783000457" class="whatsapp-float" target="_blank">💬</a>
+
+<footer>
+ <div class="developer-contact">
+  <h3> © 2025 powered by BYOSE TEC<br></h3><br><h3>connect with developer</h3><br><a href="https://wa.me/250785564401" target="_blank">BYOSE CEO:0785564401</a>http://www.byosetec.com<br>email:emmanb90@gmail.com
+</div>
+ <div class="important-links">
+  <h3>important-links</h3>
+   <a href="contact.html">>>help</a><a href="rooms.html">>>rooms</a><a href="menu.html">>>menu</a><a href="reservation.html">>>reseve</a>
+</div>
+</footer>
+<script>document.addEventListener("DOMContentLoaded", () => {
+  const slides = document.querySelectorAll('.hero-slider .slide');
+  const prevBtn = document.querySelector('.slider-nav .prev');
+  const nextBtn = document.querySelector('.slider-nav .next');
+  let current = 0;
+  const total = slides.length;
+
+  function showSlide(index) {
+    slides.forEach(slide => slide.classList.remove('active'));
+    slides[index].classList.add('active');
+  }
+
+  function nextSlide() {
+    current = (current + 1) % total;
+    showSlide(current);
+  }
+
+  function prevSlide() {
+    current = (current - 1 + total) % total;
+    showSlide(current);
+  }
+
+  // Auto slide every 5 seconds
+  let slideInterval = setInterval(nextSlide, 5000);
+
+  // Navigation buttons
+  nextBtn.addEventListener('click', () => {
+    nextSlide();
+    resetInterval();
+  });
+  prevBtn.addEventListener('click', () => {
+    prevSlide();
+    resetInterval();
+  });
+
+  function resetInterval() {
+    clearInterval(slideInterval);
+    slideInterval = setInterval(nextSlide, 5000);
+  }
+});</script>
+<script src="js/nav.js"></script>
+</body>
+</html>
